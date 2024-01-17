@@ -148,13 +148,13 @@ $conn->close();
                                         </svg>
                                     </button>
                                 </div>
-
+                                <div id="overlay"></div>
                                 <div id="carousel" class="carousel carousel-center max-w-full p-4 space-x-4 bg-neutral rounded-box whitespace-nowrap overflow-x-auto">
                                     <div class="carousel-item inline-block">
                                         <div class="custom-box banner_img">
                                             <img src="<?php echo $other_img1; ?>" alt="" class="banner_img" onclick="openModal('myModal1')">
-                                            <div id="myModal1" class="modal-page">
-                                                <span class="mo-close" onclick="closeModal('myModal1')">&times;</span>
+                                            <div id="myModal1" class="modal-page" >
+                                                <span class="mo-close" onclick="closeModal('myModal1')" style="top: 5px; right: 20px; font-size: 33px;">&times;</span>
                                                 <img class="modal-content" src="<?php echo $other_img1; ?>" alt="">
                                             </div>
                                         </div>
@@ -162,8 +162,8 @@ $conn->close();
                                     <div class="carousel-item inline-block">
                                         <div class="custom-box banner_img">
                                             <img src="<?php echo $other_img2; ?>" alt="" class="banner_img" onclick="openModal('myModal2')">
-                                            <div id="myModal2" class="modal-page">
-                                                <span class="mo-close" onclick="closeModal('myModal2')">&times;</span>
+                                            <div id="myModal2" class="modal-page" >
+                                                <span class="mo-close" onclick="closeModal('myModal2')" style="top: 5px; right: 20px; font-size: 33px;">&times;</span>
                                                 <img class="modal-content" src="<?php echo $other_img2; ?>" alt="">
                                             </div>
                                         </div>
@@ -171,8 +171,8 @@ $conn->close();
                                     <div class="carousel-item inline-block">
                                         <div class="custom-box banner_img">
                                             <img src="<?php echo $other_img3; ?>" alt="" class="banner_img" onclick="openModal('myModal3')">
-                                            <div id="myModal3" class="modal-page">
-                                                <span class="mo-close" onclick="closeModal('myModal3')">&times;</span>
+                                            <div id="myModal3" class="modal-page" >
+                                                <span class="mo-close" onclick="closeModal('myModal3')" style="top: 5px; right: 20px; font-size: 33px;">&times;</span>
                                                 <img class="modal-content" src="<?php echo $other_img3; ?>" alt="">
                                             </div>
                                         </div>
@@ -180,8 +180,8 @@ $conn->close();
                                     <div class="carousel-item inline-block">
                                         <div class="custom-box banner_img">
                                             <img src="<?php echo $other_img4; ?>" alt="" class="banner_img" onclick="openModal('myModal4')">
-                                            <div id="myModal4" class="modal-page">
-                                                <span class="mo-close" onclick="closeModal('myModal4')">&times;</span>
+                                            <div id="myModal4" class="modal-page" >
+                                                <span class="mo-close" onclick="closeModal('myModal4')" style="top: 5px; right: 20px; font-size: 33px;">&times;</span>
                                                 <img class="modal-content" src="<?php echo $other_img4; ?>" alt="">
                                             </div>
                                         </div>
