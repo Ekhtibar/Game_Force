@@ -136,49 +136,56 @@ $conn->close();
                         <p class="game-photos-title">Oyunun sekilleri</p>
                         <div class="game-photos">
                             <div class="carousel-container relative overflow-hidden">
-                                <div class="prev-next-buttons absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full z-10">
-                                    <button onclick="prevSlide()" class="carusel-btn bg-gray-800 px-4 py-2 rounded-l">
+                                <div class="prev-next-buttons absolute top-1/2  flex justify-between w-full z-10">
+                                    <button onclick="prevSlide()" class="carusel-btn bg-gray-800 absolute px-4 py-2 rounded-l">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="32" viewBox="0 0 12 32" fill="none">
                                             <path d="M10.1987 1L2 16L10.1987 31" stroke="white" stroke-width="2"/>
                                         </svg>
                                     </button>
-                                    <button onclick="nextSlide()" class="carusel-btn bg-gray-800 px-4 py-2 rounded-r">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="32" viewBox="0 0 11 32" fill="none">
+                                    <button onclick="nextSlide()" class="carusel-btn bg-gray-800 absolute px-4 py-2 rounded-l" style="right: 0; transform: rotateZ(180deg);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="32" viewBox="0 0 11 32" fill="none" style="transform: rotate(180deg);">
                                             <path d="M1.00055 1L9.19922 16L1.00055 31" stroke="white" stroke-width="2"/>
                                         </svg>
                                     </button>
                                 </div>
 
-                        
                                 <div id="carousel" class="carousel carousel-center max-w-full p-4 space-x-4 bg-neutral rounded-box whitespace-nowrap overflow-x-auto">
                                     <div class="carousel-item inline-block">
                                         <div class="custom-box banner_img">
-                                            <a href="#">
-                                                <img src="<?php echo $other_img1; ?>" alt="" class="banner_img">
-                                            </a>
+                                            <img src="<?php echo $other_img1; ?>" alt="" class="banner_img" onclick="openModal('myModal1')">
+                                            <div id="myModal1" class="modal-page">
+                                                <span class="mo-close" onclick="closeModal('myModal1')">&times;</span>
+                                                <img class="modal-content" src="<?php echo $other_img1; ?>" alt="">
+                                            </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="carousel-item inline-block">
                                         <div class="custom-box banner_img">
-                                            <a href="#">
-                                                <img src="<?php echo $other_img2; ?>" alt="" class="banner_img">
-                                            </a>
+                                            <img src="<?php echo $other_img2; ?>" alt="" class="banner_img" onclick="openModal('myModal2')">
+                                            <div id="myModal2" class="modal-page">
+                                                <span class="mo-close" onclick="closeModal('myModal2')">&times;</span>
+                                                <img class="modal-content" src="<?php echo $other_img2; ?>" alt="">
+                                            </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="carousel-item inline-block">
                                         <div class="custom-box banner_img">
-                                            <a href="#">
-                                                <img src="<?php echo $other_img3; ?>" alt="" class="banner_img">
-                                            </a>
+                                            <img src="<?php echo $other_img3; ?>" alt="" class="banner_img" onclick="openModal('myModal3')">
+                                            <div id="myModal3" class="modal-page">
+                                                <span class="mo-close" onclick="closeModal('myModal3')">&times;</span>
+                                                <img class="modal-content" src="<?php echo $other_img3; ?>" alt="">
+                                            </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="carousel-item inline-block">
                                         <div class="custom-box banner_img">
-                                            <a href="#">
-                                                <img src="<?php echo $other_img4; ?>" alt="" class="banner_img">
-                                            </a>
+                                            <img src="<?php echo $other_img4; ?>" alt="" class="banner_img" onclick="openModal('myModal4')">
+                                            <div id="myModal4" class="modal-page">
+                                                <span class="mo-close" onclick="closeModal('myModal4')">&times;</span>
+                                                <img class="modal-content" src="<?php echo $other_img4; ?>" alt="">
+                                            </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                 </div>
                             </div>
                         </div> 
@@ -234,5 +241,6 @@ $conn->close();
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script src="../js/main.js"></script>
+    <script src="../js/modal.js"></script>
 </body>
 </html>

@@ -34,7 +34,45 @@ let currentIndex = 0;
         }
     }
 
-    // Initial update after the page has loaded
-    document.addEventListener('DOMContentLoaded', function () {
-        updateCarousel();
+
+
+
+// Функция для открытия модального окна
+function openModal(modalId) {
+    var modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "block";
+    }
+}
+
+// Функция для закрытия модального окна
+function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Закрытие модального окна при клике на крестик
+document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("mo-close")) {
+        var modal = event.target.closest(".modal-page");
+        if (modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+
+// Закрытие модального окна при клике вне его области
+document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("modal-page")) {
+        event.target.style.display = "none";
+    }
+});
+
+// Отмена закрытия модального окна при клике внутри его содержимого
+document.querySelectorAll(".modal-content").forEach(function (content) {
+    content.addEventListener("click", function (event) {
+        event.stopPropagation();
     });
+});
