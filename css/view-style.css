@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+.game-img__and__about-game{
+    display: flex;
+    gap: 25px;
+    margin-top: 15px;
+}
+.game-view__columns{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    margin-top: 25px;
+    gap: 15px;
+}
+.game-view__column-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    justify-content: start;
+    justify-self: start;
+    align-items: start;
+}
+.game-view__column-2{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.game-details{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.cpu{
+    margin-top: 25px;
+}
+.game-detailed-description-text,
+.game-description-text{
+    font-size: 24px;
+    color: #24DE4D;
+    margin: 10px 0px 10px 0px;
+}
+.game-detailed-description{
+    margin-bottom: 25px;
+}
+.similar-games-title,
+.game-photos-title,
+.recomendeted-games-title{
+    font-size: 18px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+.game-video{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px 20px 0px;
+}
+.download-link{
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: #24DE4D;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    margin: 30px auto;
+}
+.download-text{
+    color: white;
+    font-weight: 700;
+}
+.download-game{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.download-icon{
+    width: 35px;
+}
+
+@media (max-width: 648px){
+    .game-img__and__about-game{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 25px;
+    }
+    .game-img_box{
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .game-view__columns{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    .game-view__column-2{
+        display: none;
+    }
+    .game-view__column-1{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px){
+    .game-title{
+        font-size: 24px;
+    }
+    .game-view__column-1{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    iframe{
+        width: 360px;
+        height: 180px;
+    }
+    .download-link{
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 360px){
+    iframe{
+        width: 280px;
+        height: 150px;
+    }
+}
