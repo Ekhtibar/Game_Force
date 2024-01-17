@@ -70,7 +70,7 @@ $conn->close();
 </head>
 <body>
     <header class="header">
-        <div class="container">
+        <div class="container" style="max-width: 1250px">
             <section class="top">
                 <div class="navbar">
                     <div class="navbar__menu">
@@ -99,7 +99,7 @@ $conn->close();
         </div>
     </header>
     <div class="game-view">
-        <div class="container">
+        <div class="container" style="max-width: 1250px">
             <h1 class="game-title"><?php echo $game_title; ?></h1>
             <div class="game-img__and__about-game">
                 <div class="game-img_box">
