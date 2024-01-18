@@ -200,23 +200,28 @@ ul,li{
     font-size: 28px;
 }
 
-ul {
-    list-style: none;
-  }
-  .list {
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 0 0 5px 5px;
-  }
-  .list-items {
-    padding: 10px 5px;
-  }
-  .list-items:hover {
-    background-color: #dddddd;
-  }
 
 
+.resultBox {
+    position: absolute;
+    width: 185px;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none; /* Скрываем изначально */
+    top: 60px;
+}
 
+.autocomplete-item {
+    padding: 5px;
+    cursor: pointer;
+}
+    
+.autocomplete-item:hover {
+    background-color: #f0f0f0;
+}
+    
 
 
 

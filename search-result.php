@@ -38,9 +38,9 @@ if (isset($_POST['searchInput'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/view-style.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/view-style.css">
     <title>GameFroce</title>
 </head>
 <body>
@@ -49,18 +49,18 @@ if (isset($_POST['searchInput'])) {
             <section class="top">
                 <div class="navbar">
                     <div class="navbar__menu">
-                        <a href="../index.php" class="navbar__menu-item">Ana sehife</a>
+                        <a href="./index.php" class="navbar__menu-item">Ana sehife</a>
                         <a href="#" class="navbar__menu-item">Yeni oyunlar</a>
                         <a href="#" class="navbar__menu-item">Butun oyunlar</a>
                     </div>
-                    <form class="search-box" action="search-result.php" method="post">
-                        <input type="text" name="searchInput" id="searchInput" placeholder="Oyun axtar...." class="search-input">
-                        <img src="../images/search-icon.svg" alt="" class="search-icon">
+                    <form class="search-box" action="./pages/search-result.php" method="post">
+                        <input class="search-input" id="searchInput" name="searchInput" value="Поиск по сайту..." onblur="if(this.value=='') this.value='Поиск по сайту...';" onfocus="if(this.value=='Поиск по сайту...') this.value='';" type="text" autocomplete="off" style="border-color: rgb(217, 217, 217);">
+                        <div class="resultBox"></div>
                     </form>
                 </div>
                 <div class="navbar__bottom">
                     <a href="#" class="logo-link">
-                        <img src="../images/gameforce-logo.svg" alt="" class="logo">
+                        <img src="./images/gameforce-logo.svg" alt="" class="logo">
                     </a>
                     <div class="navbar__bottom__category">
                         <a href="./category-page.php?category=Action" class="navbar__bottom__category__item">Action</a>
@@ -117,6 +117,11 @@ if (isset($_POST['searchInput'])) {
         </div>
     </section>
     <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/search.js"></script>                        
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/main.js"></script>
 
 </body>
 </html>

@@ -1,44 +1,41 @@
-// ... (ваш существующий код) ...
-
-let input = document.getElementById("searchInput");
-let list = document.querySelector(".list");
-
-// Execute function on input event
-input.addEventListener("input", (e) => {
-    // Clear previous results
-    removeElements();
-    
-    // Get input value
-    let inputValue = input.value.toLowerCase();
-
-    // Loop through the keywords array
-    for (let i of keywords) {
-        // Convert keyword to lowercase
-        let keyword = i.toLowerCase();
-
-        // Check if keyword includes the input value
-        if (keyword.includes(inputValue) && inputValue !== "") {
-            // Create li element
-            let listItem = document.createElement("li");
-            listItem.classList.add("list-items");
-            listItem.style.cursor = "pointer";
-            listItem.setAttribute("onclick", "displayNames('" + i + "')");
-
-            // Display matched part in bold
-            let index = keyword.indexOf(inputValue);
-            let word = keyword.substring(0, index) + "<b>" + keyword.substring(index, index + inputValue.length) + "</b>" + keyword.substring(index + inputValue.length);
-
-            // Display the value in array
-            listItem.innerHTML = word;
-            list.appendChild(listItem);
+// search.js
+$(document).ready(function () {
+    $('#searchInput').on('input', function () {
+        var query = $(this).val();
+        if (query.length >= 2) {
+            $.ajax({
+                url: 'ajax-autocomplete.php',
+                method: 'POST',
+                data: { query: query },
+                success: function (data) {
+                    console.log(data);  // Вывести данные в консоль для отладки
+                    $('.resultBox').html(data);
+                    $('.resultBox').show();
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);  // Вывести ошибку в консоль для отладки
+                }
+            });
+        } else {
+            $('.resultBox').hide();
         }
-    }
+    });
+
+    // Событие при клике на элемент автоподбора
+    $('.resultBox').on('click', '.autocomplete-item', function () {
+        // Заполняем поле поиска выбранным значением
+        $('#searchInput').val($(this).text());
+        // Скрываем результаты автоподбора
+        $('.resultBox').hide();
+
+        // Выполняем дополнительные действия, например, отправляем форму поиска
+        $('#searchForm').submit();
+    });
+
+    // Скрыть контейнер при клике за его пределами
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('.resultBox').length && !$(e.target).is('#searchInput')) {
+            $('.resultBox').hide();
+        }
+    });
 });
-
-// ... (ваш существующий код) ...
-
-function removeElements() {
-    while (list.firstChild) {
-        list.removeChild(list.firstChild);
-    }
-}
