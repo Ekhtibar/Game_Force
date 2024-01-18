@@ -1,14 +1,14 @@
 <?php
-// Подключение к базе данных
+
 
 $conn = new mysqli("localhost", "root", "root", "games");
 
-// Проверка соединения
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Запрос к базе данных
+
 $sql = "SELECT * FROM `game-card`";
 $result = $conn->query($sql);
 ?>
@@ -35,10 +35,10 @@ $result = $conn->query($sql);
                         <a href="#" class="navbar__menu-item">Yeni oyunlar</a>
                         <a href="#" class="navbar__menu-item">Butun oyunlar</a>
                     </div>
-                    <div class="search-box">
-                        <input type="text" id="searchInput" placeholder="Oyun axtar...." class="search-input">
-                        <img src="./images/search-icon.svg" alt="" class="search-icon">
-                    </div>
+                    <form class="search-box" action="./pages/search-result.php" method="post">
+                        <input type="text" name="searchInput" id="searchInput" placeholder="Oyun axtar...." class="search-input">
+                        <!-- <img src="../images/search-icon.svg" alt="" class="search-icon"> -->
+                    </form>
                 </div>
                 <div class="navbar__bottom">
                     <a href="#" class="logo-link">
@@ -122,6 +122,10 @@ $result = $conn->query($sql);
             </div>
         </div>
     </footer>
+
+    
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
 

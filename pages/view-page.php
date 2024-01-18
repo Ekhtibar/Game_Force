@@ -78,10 +78,10 @@ $conn->close();
                         <a href="#" class="navbar__menu-item">Yeni oyunlar</a>
                         <a href="#" class="navbar__menu-item">Butun oyunlar</a>
                     </div>
-                    <div class="search-box">
-                        <input type="text" placeholder="Oyun axtar...." class="search-input">
-                        <img src="../images/search-icon.svg" alt="" class="search-icon">
-                    </div>
+                    <form class="search-box" action="search-result.php" method="post">
+                        <input type="text" name="searchInput" id="searchInput" placeholder="Oyun axtar...." class="search-input">
+                        <!-- <img src="../images/search-icon.svg" alt="" class="search-icon"> -->
+                    </form>
                 </div>
                 <div class="navbar__bottom">
                     <a href="#" class="logo-link">
