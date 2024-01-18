@@ -122,10 +122,9 @@ $conn->close();
                 <div class="game-view__columns">
                     <div class="game-view__about">
                         <p class="game-description-text">Tesvir</p>
-                        <p class="game-description"> <?php echo $game_description; ?></p>
+                        <p class="game-description" style="text-align: justify;"> <?php echo $game_description; ?></p>
                         <p class="game-detailed-description-text">Etrafli melumat</p>
-                        <p class="game-detailed-description"> <?php echo $game_detailed_description; ?></p>
-                        <p class="similar-games-title">Oxsar oyunlar</p>
+                        <p class="game-detailed-description" style="text-align: justify;"> <?php echo $game_detailed_description; ?></p>
                         <p class="game-video-title">Treyler / Oyunun videosu</p>
                         <div class="game-video">
                             <iframe width="560" height="300" src="<?php echo $game_video_link; ?>"
