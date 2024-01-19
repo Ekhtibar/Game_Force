@@ -16,10 +16,11 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>GameForce</title>
 </head>
 <body>
@@ -34,7 +35,7 @@ $result = $conn->query($sql);
                     </div>
                     <form class="search-box" action="search-result.php" method="post">
                         <input class="search-input" id="searchInput" name="searchInput" value="Поиск по сайту..." onblur="if(this.value=='') this.value='Поиск по сайту...';" onfocus="if(this.value=='Поиск по сайту...') this.value='';" type="text" autocomplete="off" style="border-color: rgb(217, 217, 217);">
-                        <div class="resultBox"></div>
+                        <div class="resultBox" style="z-index: 999;"></div>
                     </form>
                 </div>
                 <div class="navbar__bottom">
@@ -53,46 +54,30 @@ $result = $conn->query($sql);
             </section>
         </div>
     </header>
-    <section class="games-section-head">
-        <div class="container games-head" style="max-width: 1250px">
-            <h1 class="games-title_text">Oyunlar</h1>
-            <div class="games-head__navbar">
-                <a href="./pages/category-page.php?category=Simulator" class="games-head__navabr__item">Simulator</a>
-                <a href="./pages/category-page.php?category=Open%20world" class="games-head__navabr__item">Open world</a>
-                <a href="./pages/category-page.php?category=Survival" class="games-head__navabr__item">Survival</a>
-                <a href="./pages/category-page.php?category=Historical" class="games-head__navabr__item">Historical</a>
-            </div>
-
-        </div>
-    </section>
     <section class="games">
         <div class="container" style="max-width: 1250px">
             <div class="games-container">
-                <div class="games-container__column-1" style='justify-content: center; align-items: start; '>
+            <div class="games-container__column-1" style='display: grid; grid-template-columns: repeat(4, 1fr);'>
                 <?php
-                    if ($result->num_rows > 0) {
-                        $counter = 0;
-                        while ($row = $result->fetch_assoc()) {
-                            if ($counter % 4 === 0 && $counter !== 0) {
-                                echo "</div><div class='games-container__row'>";
-                            }
+                if ($result->num_rows > 0) {
+                    $counter = 0;
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<div class='game-card' style='justify-content: center'>";
+                        echo "<a href='./view-page.php?game_id=" . $row["game_id"] . "' class='game-card__link'>";
+                        echo "<img src='" . $row["game_main_photo"] . "' alt='' class='game-card__img'>";
+                        echo "</a>";
+                        echo "<a href='./pages/view-page.php?game_id=" . $row["game_id"] . "' class='game-card__link'>";
+                        echo "<h1 class='game-card__title'>" . $row["game_title"] . "</h1>";
+                        echo "</a>";
+                        echo "</div>";
 
-                            echo "<div class='game-card' style='justify-content: center'>";
-                            echo "<a href='./view-page.php?game_id=" . $row["game_id"] . "' class='game-card__link'>";
-                            echo "<img src='" . $row["game_main_photo"] . "' alt='' class='game-card__img'>";
-                            echo "</a>";
-                            echo "<a href='./pages/view-page.php?game_id=" . $row["game_id"] . "' class='game-card__link'>";
-                            echo "<h1 class='game-card__title'>" . $row["game_title"] . "</h1>";
-                            echo "</a>";
-                            echo "</div>";
-
-                            $counter++;
-                        }
-                    } else {
-                        echo "No games found.";
+                        $counter++;
                     }
-                    ?>
-                </div>
+                } else {
+                    echo "No games found.";
+                }
+                ?>
+            </div>
                 <div class="games-container__column-2">
                     <div class="ads">
 
@@ -128,8 +113,6 @@ $result = $conn->query($sql);
 
 
     <script src="js/main.js"></script>
-
-    
 
 
 

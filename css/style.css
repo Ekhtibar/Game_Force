@@ -226,6 +226,115 @@ ul,li{
 
 
 
+/* slider */
+.wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 20px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
+.carousel {
+    max-width: 100%;
+    grid-auto-columns: calc((100% / 3.5) - 12px);
+    list-style: none;
+    scroll-behavior: smooth;
+    margin-bottom: 50px
+}
+.carousel.dragging{
+    scroll-behavior: auto;
+}
+.carousel__product-card{
+    user-select: none;
+}
+.carousel__product-card__img{
+    width: 100%;
+}
+.carousel__product-card__title{
+    font-family: 'Satoshi', sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    overflow-x: hidden;
+}
+.carousel__product-card__price{
+    font-family: 'Satoshi', sans-serif;
+    font-size: 18px;
+
+}
+i{
+    height: 50px;
+    width: 50px;
+    background: rgba(238, 238, 238, 0.648);
+    border-radius: 50%;
+    line-height: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 37%;
+    transform: translateY(-50%, 50%);
+}
+i:first-child{
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+i:last-child{
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+@media (max-width: 768px){
+    .carousel {
+        grid-auto-columns: calc((100% / 2.5) - 12px);
+    }
+    .wrapper .carousel{
+        gap: 10px;
+        overflow-x: scroll;
+    }
+    i:last-child,
+    i:first-child{
+        display: none;
+    }
+}
+@media (max-width: 480px){
+    .carousel {
+        grid-auto-columns: calc((100% / 1.5) - 12px);
+    }
+    .fa-solid{
+        display: none;
+    }
+}
+
+@media (max-width: 360px){
+    .carousel__product-card__title{
+        font-size: 18px;
+    }
+    .carousel__product-card__price{
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (min-width: 1280px){
     .container {
