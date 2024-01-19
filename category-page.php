@@ -32,9 +32,9 @@ $conn->close();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/view-style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/view-style.css">
     <title>GameForce</title>
 </head>
 <body>
@@ -44,8 +44,8 @@ $conn->close();
                 <div class="navbar">
                     <div class="navbar__menu">
                         <a href="./index.php" class="navbar__menu-item">Ana sehife</a>
-                        <a href="#" class="navbar__menu-item">Yeni oyunlar</a>
-                        <a href="#" class="navbar__menu-item">Butun oyunlar</a>
+                        <!-- <a href="#" class="navbar__menu-item">Yeni oyunlar</a>
+                        <a href="#" class="navbar__menu-item">Butun oyunlar</a> -->
                     </div>
                     <form class="search-box" action="search-result.php" method="post">
                         <input class="search-input" id="searchInput" name="searchInput" value="Поиск по сайту..." onblur="if(this.value=='') this.value='Поиск по сайту...';" onfocus="if(this.value=='Поиск по сайту...') this.value='';" type="text" autocomplete="off" style="border-color: rgb(217, 217, 217);">
@@ -53,16 +53,9 @@ $conn->close();
                     </form>
                 </div>
                 <div class="navbar__bottom">
-                    <a href="#" class="logo-link">
+                    <a href="./index.php" class="logo-link">
                         <img src="./images/gameforce-logo.svg" alt="" class="logo">
                     </a>
-                    <div class="navbar__bottom__category">
-                        <a href="./category-page.php?category=Action" class="navbar__bottom__category__item">Action</a>
-                        <a href="./category-page.php?category=Role-Playing" class="navbar__bottom__category__item">Role-Playing</a>
-                        <a href="./category-page.php?category=Adventure" class="navbar__bottom__category__item">Adventure</a>
-                        <a href="./category-page.php?category=PVP" class="navbar__bottom__category__item">PVP</a>
-                        <a href="./category-page.php?category=OtherCategory" class="navbar__bottom__category__item">OtherCategory</a>
-                    </div>
                 </div>
             </section>
         </div>
@@ -116,6 +109,23 @@ $conn->close();
             </div>
         </div>
     </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <a href="#" class="logo-link">
+                    <img src="./images/gameforce-logo.svg" alt="" class="footer-logo" style='width: 120px'>
+                </a>
+                <div class="copyright-text">
+                   © 2023 <a href="#" class="">GAMEFORCE.</a> Bütün hüquqlar qorunur.
+                </div>
+            </div>
+        </div>
+    </footer>            
+
+
+
+
+
 
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="./js/search.js"></script>                        

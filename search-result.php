@@ -48,18 +48,18 @@ if (isset($_POST['searchInput'])) {
         <div class="container" style="max-width: 1250px">
             <section class="top">
                 <div class="navbar">
-                    <div class="navbar__menu">
+                    <!-- <div class="navbar__menu">
                         <a href="./index.php" class="navbar__menu-item">Ana sehife</a>
                         <a href="#" class="navbar__menu-item">Yeni oyunlar</a>
                         <a href="#" class="navbar__menu-item">Butun oyunlar</a>
-                    </div>
-                    <form class="search-box" action="./pages/search-result.php" method="post">
+                    </div> -->
+                    <form class="search-box" action="./search-result.php" method="post">
                         <input class="search-input" id="searchInput" name="searchInput" value="Поиск по сайту..." onblur="if(this.value=='') this.value='Поиск по сайту...';" onfocus="if(this.value=='Поиск по сайту...') this.value='';" type="text" autocomplete="off" style="border-color: rgb(217, 217, 217);">
                         <div class="resultBox"></div>
                     </form>
                 </div>
                 <div class="navbar__bottom">
-                    <a href="#" class="logo-link">
+                    <a href="./index.php" class="logo-link">
                         <img src="./images/gameforce-logo.svg" alt="" class="logo">
                     </a>
                     <div class="navbar__bottom__category">
@@ -78,29 +78,24 @@ if (isset($_POST['searchInput'])) {
             <div class="games-container">
             <div class="games-container__column-1" style='justify-content: center; align-items: start; '>
             <?php
-                if ($result !== null && $result->num_rows > 0) {
+                if ($result->num_rows > 0) {
                     $counter = 0;
                     while ($row = $result->fetch_assoc()) {
-                        if ($counter % 4 === 0 && $counter !== 0) {
-                            echo "</div><div class='games-container__row'>";
-                        }
-
                         echo "<div class='game-card' style='justify-content: center'>";
                         echo "<a href='./view-page.php?game_id=" . $row["game_id"] . "' class='game-card__link'>";
                         echo "<img src='" . $row["game_main_photo"] . "' alt='' class='game-card__img'>";
                         echo "</a>";
-                        echo "<a href='./view-page.php?game_id=" . $row["game_id"] . "' class='game-card__link'>";
+                        echo "<a href='./pages/view-page.php?game_id=" . $row["game_id"] . "' class='game-card__link'>";
                         echo "<h1 class='game-card__title'>" . $row["game_title"] . "</h1>";
                         echo "</a>";
-                       
                         echo "</div>";
 
                         $counter++;
                     }
                 } else {
-                    echo "Oyun tapılmadı."; 
+                    echo "No games found.";
                 }
-            ?>
+                ?>
             </div>
                 <div class="games-container__column-2">
                     <div class="ads">
@@ -116,6 +111,22 @@ if (isset($_POST['searchInput'])) {
             </div>
         </div>
     </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <a href="#" class="logo-link">
+                    <img src="./images/gameforce-logo.svg" alt="" class="footer-logo" style='width: 120px'>
+                </a>
+                <div class="copyright-text">
+                   © 2023 <a href="#" class="">GAMEFORCE.</a> Bütün hüquqlar qorunur.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="./js/search.js"></script>                        
 
