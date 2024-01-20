@@ -80,17 +80,7 @@
 }
 
 
-  
-/* 
 
-.modal-page {
-    display: none;
-    width: 100%;
-    z-index: 999;
-    height: 100px;
-    background: #000;
-    position: relative;
-} */
 /* Стили для модального окна */
 .modal-page {
     width: 70%;

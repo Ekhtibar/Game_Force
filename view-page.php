@@ -74,9 +74,7 @@ $conn->close();
             <section class="top">
                 <div class="navbar">
                     <div class="navbar__menu">
-                        <a href="./index.php" class="navbar__menu-item">Ana sehife</a>
-                        <!-- <a href="#" class="navbar__menu-item">Yeni oyunlar</a>
-                        <a href="#" class="navbar__menu-item">Butun oyunlar</a> -->
+                        <a href="./index.php" class="navbar__menu-item">Главная страница</a>
                     </div>
                     <form class="search-box" action="./search-result.php" method="post">
                         <input class="search-input" id="searchInput" name="searchInput" value="Поиск по сайту..." onblur="if(this.value=='') this.value='Поиск по сайту...';" onfocus="if(this.value=='Поиск по сайту...') this.value='';" type="text" autocomplete="off" style="border-color: rgb(217, 217, 217);">
@@ -222,7 +220,7 @@ $conn->close();
                     <img src="./images/gameforce-logo.svg" alt="" class="footer-logo" style='width: 120px'>
                 </a>
                 <div class="copyright-text">
-                   © 2023 <a href="#" class="">GAMEFORCE.</a> Bütün hüquqlar qorunur.
+                   © 2023 <a href="#" class="">GAMEFORCE.</a> Все права защищены.
                 </div>
             </div>
         </div>

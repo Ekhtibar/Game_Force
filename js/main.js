@@ -56,17 +56,13 @@ $(document).ready(function () {
         }
     });
 
-    // Событие при клике на элемент автоподбора
+    
     $('.resultBox').on('click', '.autocomplete-item', function () {
-        // Заполняем поле поиска выбранным значением
         $('#searchInput').val($(this).text());
-        // Скрываем результаты автоподбора
         $('.resultBox').hide();
-        // Теперь можно выполнить дополнительные действия, например, отправить форму поиска
-        // Например, $('#searchForm').submit();
     });
 
-    // Скрыть контейнер при клике за его пределами
+
     $(document).on('click', function (e) {
         if (!$(e.target).closest('.resultBox').length && !$(e.target).is('#searchInput')) {
             $('.resultBox').hide();

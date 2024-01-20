@@ -31,7 +31,6 @@ $result = $conn->query($sql);
                 display: flex;
             }
         }
-
     </style>
 </head>
 <body>
@@ -40,9 +39,7 @@ $result = $conn->query($sql);
             <section class="top">
                 <div class="navbar">
                     <div class="navbar__menu">
-                        <a href="index.php" class="navbar__menu-item" style="color: green;">Ana sehife</a>
-                        <!-- <a href="#" class="navbar__menu-item">Yeni oyunlar</a>
-                        <a href="#" class="navbar__menu-item">Butun oyunlar</a> -->
+                        <a href="index.php" class="navbar__menu-item" style="color: green;">Главная страница</a>
                     </div>
                     <form class="search-box" action="search-result.php" method="post">
                         <input class="search-input" id="searchInput" name="searchInput" value="Поиск по сайту..." onblur="if(this.value=='') this.value='Поиск по сайту...';" onfocus="if(this.value=='Поиск по сайту...') this.value='';" type="text" autocomplete="off" style="border-color: rgb(217, 217, 217);">
@@ -54,18 +51,17 @@ $result = $conn->query($sql);
                         <img src="./images/gameforce-logo.svg" alt="" class="logo">
                     </a>
                     <div class="navbar__bottom__category" style="display: flex; overflow: hidden; overflow-x: scroll;">
-                        <a href="./category-page.php?category=Action" class="navbar__bottom__category__item" style="text-wrap: nowrap;">Action</a>
-                        <a href="./category-page.php?category=Role-Playing" class="navbar__bottom__category__item" style="text-wrap: nowrap;">Role-Playing</a>
-                        <a href="./category-page.php?category=Adventure" class="navbar__bottom__category__item" style="text-wrap: nowrap;">Adventure</a>
+                        <a href="./category-page.php?category=Action" class="navbar__bottom__category__item" style="text-wrap: nowrap;">Экшен</a>
+                        <a href="./category-page.php?category=Role-Playing" class="navbar__bottom__category__item" style="text-wrap: nowrap;">Ролевые</a>
+                        <a href="./category-page.php?category=Adventure" class="navbar__bottom__category__item" style="text-wrap: nowrap;">Приключение</a>
                         <a href="./category-page.php?category=PVP" class="navbar__bottom__category__item" style="text-wrap: nowrap;">PVP</a>
-                        <a href="./category-page.php?category=OtherCategory" class="navbar__bottom__category__item dop" style="text-wrap: nowrap;">OtherCategory</a>
-                        <a href="./category-page.php?category=OtherCategory" class="navbar__bottom__category__item dop">OtherCategory</a>
-                        <a href="./category-page.php?category=OtherCategory" class="navbar__bottom__category__item dop">OtherCategory</a>
-                        <a href="./category-page.php?category=OtherCategory" class="navbar__bottom__category__item dop">OtherCategory</a>
-                        <a href="./category-page.php?category=OtherCategory" class="navbar__bottom__category__item dop">OtherCategory</a>
-                        <a href="./category-page.php?category=OtherCategory" class="navbar__bottom__category__item dop">OtherCategory</a>
+                        <a href="./category-page.php?category=OtherCategory" class="navbar__bottom__category__item dop" style="text-wrap: nowrap;">Другие</a>
+                        <a href="./category-page.php?category=OtherCategory" class="navbar__bottom__category__item dop">Другие</a>
+                        <a href="./category-page.php?category=OtherCategory" class="navbar__bottom__category__item dop">Другие</a>
+                        <a href="./category-page.php?category=OtherCategory" class="navbar__bottom__category__item dop">Другие</a>
+                        <a href="./category-page.php?category=OtherCategory" class="navbar__bottom__category__item dop">Другие</a>
+                        <a href="./category-page.php?category=OtherCategory" class="navbar__bottom__category__item dop">Другие</a>
                     </div>
-
                 </div>
             </section>
         </div>
@@ -115,7 +111,7 @@ $result = $conn->query($sql);
                     <img src="./images/gameforce-logo.svg" alt="" class="footer-logo" style='width: 120px'>
                 </a>
                 <div class="copyright-text">
-                   © 2023 <a href="#" class="">GAMEFORCE.</a> Bütün hüquqlar qorunur.
+                   © 2023 <a href="#" class="">GAMEFORCE.</a> Все права защищены
                 </div>
             </div>
         </div>
